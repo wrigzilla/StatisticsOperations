@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStrategies\IDataStrategy.cs" />
+    <Compile Include="DataStrategies\Math.cs" />
+    <Compile Include="DataStrategies\Mean.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
