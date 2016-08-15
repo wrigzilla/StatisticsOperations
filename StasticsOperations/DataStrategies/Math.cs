@@ -46,22 +46,40 @@ namespace StasticsOperations.DataStrategies
 		//possilbe to have multiple mode values 
 		public static int[] Mode(int[] data)
 		{
-			//most common value
-			int i = 0; int length = data.Length;
-			int count = 0; int number = 0;
+			int[] duplicatsCount = CountDuplicates(data);
+			int[] distinct = DistinctData(data);
+
+			int i = 0; int length = duplicatsCount.Length;
+			int number = 0;
+
+			List<int> modeIndexes = new List<int>();
+
 			while (i < length)
 			{
 				if (i == 0)
 				{
-					number = data[i];
-					count = 1;
+					number = duplicatsCount[i];
+					modeIndexes.Add(i);
 				}
 				else
 				{
-					if (data[i] == number) count++;
+					if (duplicatsCount[i] == number) modeIndexes.Add(i);
+					if (duplicatsCount[i] > number)
+					{
+						number = duplicatsCount[i];
+						modeIndexes.Clear();
+						modeIndexes.Add(i);
+					}
 				}
+				i++;
 			}
-			return new int[1];
+
+			modeIndexes.ForEach(delegate(int item)
+			{
+				item = distinct[item];
+			});
+
+			return modeIndexes.ToArray();
 		}
 
 		public static int[] DistinctData(int[] data)
@@ -81,9 +99,27 @@ namespace StasticsOperations.DataStrategies
 
 		public static int[] CountDuplicates(int[] data)
 		{
+			int[] distinct = DistinctData(data);
+			int[] counts = new int[distinct.Length];
+			int i = 0; int length = distinct.Length;
 
+			while (i < length)
+			{
+				counts[i] = countDuplicate(data, distinct[i]);
+				i++;
+			}
+			return counts;
+		}
 
-			return new int[1];
+		public static int countDuplicate(int[] data, int num)
+		{
+			int i = 0; int length = data.Length; int count = 0;
+			while (i < length)
+			{
+				if (data[i] == num) count++;
+				i++;
+			}
+			return count;
 		}
 
 		public static void Median(int[] data)
