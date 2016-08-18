@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StasticsOperations.DataStrategies
 {
-	class MathOperations
+	public class MathOperations
 	{
 		public static int Sum(int[] data)
 		{
@@ -26,6 +24,8 @@ namespace StasticsOperations.DataStrategies
 			}
 			return sum;
 		}
+
+
 
 		public static double Mean(int[] data)
 		{
@@ -192,8 +192,6 @@ namespace StasticsOperations.DataStrategies
 		{
 			return Math.Sqrt(VarianceFromMean(data));
 		}
-
-
 
 		public static int[] Square(int[] data)
 		{
