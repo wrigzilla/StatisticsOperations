@@ -11,7 +11,9 @@ namespace StatisticsOperationsUnitTests
 	{
 		static void Main(string[] args)
 		{
-			new TestManager.TestManager();
+			TestManager.TestManager tests = new TestManager.TestManager();
+			tests.runTests();
+
 		}
 	}
 }

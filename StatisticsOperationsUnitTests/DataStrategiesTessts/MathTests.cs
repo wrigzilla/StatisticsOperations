@@ -15,12 +15,12 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 			Console.WriteLine("Initialize Math Operations Test");
 		}
 
+		#region CoveredTests
 		//tests
-		public bool SquareTest(int[] data)
+		public bool SquareTest()
 		{
 			int[] num = { 1, 2, 3, 4 };
 			num = MathOperations.Square(num);
-
 			if (num.ToList().Sum() == 30)
 			{
 				return true;
@@ -28,22 +28,21 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 			return false;
 		}
 
-		public bool SumTest(int[] data)
+		public bool SumTest()
 		{
-			int[] a = { 1, 2, 3, 4, 4 };
-
-			MathOperations.Sum(a);
-
+			int[] a = { 1, 2, 3, 4 };
+			if (MathOperations.Sum(a) == 10)
+			{
+				return true;
+			}
 			//need to test double[] and int[]
-
 			return false;
 		}
 
-		public bool GreatestValueTest(int[] data)
+		public bool GreatestValueTest()
 		{
 			int[] num = { 2,5,9,7,5,3,2 };
 			int result = MathOperations.GreatestValue(num);
-
 			if (result == 9)
 			{
 				return true;
@@ -51,22 +50,43 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 			return false;
 		}
 
-		public bool LowestValueTest(int[] data)
+		public bool LowestValueTest()
 		{
+			int[] num = { 2, 5, 9, 7, 5, 3, 2 };
+			int result = MathOperations.LowestValue(num);
+			if (result == 2)
+			{
+				return true;
+			}
 			return false;
 		}
 
-
-		public bool MeanTest(int [] data)
+		public bool MeanTest()
 		{
 			//test with int[] double[]
+			int[] a = { 2, 3, 4, 5 };
+			if (MathOperations.Mean(a) == 3.5)
+			{
+				return true;
+			}
 			return false;
 		}
 
-		public bool RangeTest(int[] data)
+		public bool RangeTest()
 		{
+			int[] a = { 1, 2, 3, 4 };
+			if (MathOperations.Range(a) == 3)
+			{
+				return true;
+			}
 			return false;
 		}
+
+		#endregion
+
+
+		#region TestsToFinish
+
 
 		public bool ModeTest(int[] data)
 		{
@@ -111,5 +131,7 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 		{
 			return false;
 		}
+
+		#endregion
 	}
 }
