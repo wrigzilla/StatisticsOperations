@@ -15,6 +15,7 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 			Console.WriteLine("Initialize Math Operations Test");
 		}
 
+		//tests
 		public bool SquareTest(int[] data)
 		{
 			int[] num = { 1, 2, 3, 4 };
@@ -38,6 +39,24 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 			return false;
 		}
 
+		public bool GreatestValueTest(int[] data)
+		{
+			int[] num = { 2,5,9,7,5,3,2 };
+			int result = MathOperations.GreatestValue(num);
+
+			if (result == 9)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		public bool LowestValueTest(int[] data)
+		{
+			return false;
+		}
+
+
 		public bool MeanTest(int [] data)
 		{
 			//test with int[] double[]
@@ -50,6 +69,11 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 		}
 
 		public bool ModeTest(int[] data)
+		{
+			return false;
+		}
+
+		public bool MedianTest(int[] data)
 		{
 			return false;
 		}
@@ -69,20 +93,9 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 			return false;
 		}
 
-		public bool MedianTest(int[] data)
-		{
-			return false;
-		}
+		
 
-		public bool GreatestValueTest(int[] data)
-		{
-			return false;
-		}
-
-		public bool LowestValueTest(int[] data)
-		{
-			return false;
-		}
+		
 
 		public bool DifferenceFromMeanTest(int[] data)
 		{
@@ -98,6 +111,5 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 		{
 			return false;
 		}
-
 	}
 }
