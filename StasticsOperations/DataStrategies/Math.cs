@@ -42,6 +42,19 @@ namespace StasticsOperations.DataStrategies
 			return GreatestValue(data) - LowestValue(data);
 		}
 
+		public static double Median(int[] data)
+		{
+			int length = data.Length;
+			Array.Sort(data);
+			double halfLength = length * 0.5;
+
+			if (length % 2 == 0)
+			{
+				return (data[(int)halfLength - 1] + data[(int)halfLength]) * 0.5;
+			}
+			int n = (int)Math.Round(halfLength, MidpointRounding.AwayFromZero);
+			return data[n - 1];
+		}
 
 		//possilbe to have multiple mode values 
 		public static int[] Mode(int[] data)
@@ -80,7 +93,8 @@ namespace StasticsOperations.DataStrategies
 			});
 
 			return modeIndexes.ToArray();
-		}
+		}	//this one is a bitch
+
 
 		public static int[] DistinctData(int[] data)
 		{
@@ -122,10 +136,6 @@ namespace StasticsOperations.DataStrategies
 			return count;
 		}
 
-		public static void Median(int[] data)
-		{
-			//middle value
-		}
 
 
 		public static int GreatestValue(int[] data)

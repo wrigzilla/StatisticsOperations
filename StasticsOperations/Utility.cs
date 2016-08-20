@@ -12,9 +12,11 @@ namespace StasticsOperations
 		public static void print(int[] data)
 		{
 			string message = "";
-			foreach (int i in data)
+			int i = 0; int length = data.Length;
+			while (i < length)
 			{
-				message = message + ", " + i.ToString();
+				message += ((i == 0) ? "" : ",") + data[i].ToString();
+				i++;
 			}
 			Console.WriteLine(message);
 		}

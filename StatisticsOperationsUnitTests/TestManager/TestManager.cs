@@ -29,6 +29,7 @@ namespace StatisticsOperationsUnitTests.TestManager
 			log(math.LowestValueTest(), "Lowest Value Test (type int[])");
 			log(math.MeanTest(), "Mean Value Test (type int[])");
 			log(math.RangeTest(), "Range Test (type int[])");
+			log(math.MedianTest(), "Median Test (type int[])");
 
 			printResults(results);
 		}

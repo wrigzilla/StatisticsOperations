@@ -21,6 +21,10 @@ namespace StasticsOperations
 			//Console.WriteLine("Variance = " + MathOperations.VarianceFromMean(data).ToString());
 			//Console.WriteLine("Standard Deviation = " + MathOperations.StandardDeviation(data).ToString());
 
+
+			//int[] a = { 9,6,3,2 };
+			//Console.WriteLine(MathOperations.Median(a));
+
 			//Utility.print(MathOperations.Mode(data));
 		}
 	}

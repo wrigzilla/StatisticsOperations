@@ -82,6 +82,41 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 			return false;
 		}
 
+		public bool DistinctData()
+		{
+			int[] data = { 0, 1, 1, 2 };
+			if (MathOperations.DistinctData(data) == new int[] { 0, 1, 2 } )
+			{
+
+			}
+
+
+			return false;
+		}
+
+		public bool MedianTest()
+		{
+			bool evenArrayLength = false;
+			bool oddArrayLength = false;
+
+			int[] a = { 4, 5, 6, 7, 8 };
+			if (MathOperations.Median(a) == 6)
+			{
+				oddArrayLength = true;
+			}
+
+			a = new int[] { 4, 5, 6, 7 };
+			if (MathOperations.Median(a) == 5.5)
+			{
+				evenArrayLength = true;
+			}
+
+			return evenArrayLength && oddArrayLength;
+
+			//should properly test this function as it has different behaviour based upon
+		}
+
+
 		#endregion
 
 
@@ -89,16 +124,6 @@ namespace StatisticsOperationsUnitTests.DataStrategiesTessts
 
 
 		public bool ModeTest(int[] data)
-		{
-			return false;
-		}
-
-		public bool MedianTest(int[] data)
-		{
-			return false;
-		}
-
-		public bool DistinctData(int[] data)
 		{
 			return false;
 		}
